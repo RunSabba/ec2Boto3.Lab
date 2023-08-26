@@ -2,7 +2,7 @@
 
 import boto3
 
-#create ec2 resource and name your instance
+#create ec2 resource and name your instance. I kept getting an ImageID "AMI-..." doesnt exist. Found info saying that adding the region name resolves this.
 ec2 = boto3.resource('ec2', region_name= 'us-east-2')
 instance_name = 'AAN-ec2'
 
