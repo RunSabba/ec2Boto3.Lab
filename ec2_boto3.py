@@ -14,7 +14,7 @@ instance_id = None
 instances = ec2.instances.all()
 instance_exists = False
 
-#nested4loop to check for instance name within or instance's list by the Tags.Using this to make sure we dont create another ec2 with once that already exists.
+#nested4loop to check for instance name within our instance list by the Tags. Using this to make sure we dont create another ec2 with one that already exists.
 for instance in instances:
     for tag in instance.tags:
         if tag ['Key'] == 'Name' and tag ['Value'] == instance_name:
@@ -54,9 +54,9 @@ ec2.Instance(instance_id).stop()
 print(f"An instance name {instance_name}-{instance_id}'Has been Stopped")
 
 #start an instance
-#c2.Instance(instance_id).start()
-#rint(f"An instance name {instance_name}-{instance_id}'Has been started")
+#ec2.Instance(instance_id).start()
+#print(f"An instance name {instance_name}-{instance_id}'Has been started")
 
 #Terminate an instance
-#c2.Instance(instance_id).terminate()
-#rint(f"An instance name {instance_name}-{instance_id}'Has been Terminated")
+#ec2.Instance(instance_id).terminate()
+#print(f"An instance name {instance_name}-{instance_id}'Has been Terminated")
